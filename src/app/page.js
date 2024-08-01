@@ -3,13 +3,16 @@ import { useState } from "react";
 
 import SubtleCheckbox from "@/components/Checkbox/Subtle/SubtleCheckbox";
 import ToggleSubtle from "@/components/Toggle/Subtle/toggle";
+import FancyToggle from "@/components/Toggle/Fancy/Fancy";
+
 
 export default function Home() {
   const [subtleToggle, setSubtleToggle] = useState(false);
   const [subtleCheckbox, setSubtleCheckbox] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+    <div style={{ height: '100vh', display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
 
       <ToggleSubtle
         size="46px"
@@ -25,6 +28,12 @@ export default function Home() {
         value={subtleCheckbox}
         onChange={setSubtleCheckbox}
       />
+
+      <FancyToggle
+        checked={isDarkMode}
+        onChange={setIsDarkMode}
+      />
+
     </div>
   )
 }
